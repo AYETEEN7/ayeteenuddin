@@ -1,260 +1,49 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #0e0e0e;
-  color: #f0f0f0;
-  line-height: 1.6;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.2rem 2rem;
-  background-color: #111;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-}
-
-nav h1 {
-  font-size: 1.8rem;
-  letter-spacing: 2px;
-  color: #f4f4f4;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-nav ul li a {
-  color: #bbb;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
+  background: #0e0e0e;
   color: #fff;
-}
-
-header {
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  margin: 0;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+}
+
+.container {
   text-align: center;
-  padding: 0 1rem;
-}
-
-.intro h2 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.intro p {
-  font-size: 1.2rem;
-  color: #aaa;
-}
-
-section {
-  padding: 4rem 2rem;
-  max-width: 800px;
-  margin: auto;
-}
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #333;
-  display: inline-block;
-}
-
-.project-card {
+  width: 90%;
+  max-width: 400px;
   background: #1a1a1a;
-  padding: 1rem 1.5rem;
-  margin: 1rem 0;
-  border-radius: 8px;
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  background: #222;
-}
-
-footer {
-  text-align: center;
   padding: 2rem;
-  background-color: #111;
-  margin-top: 4rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #111;
 }
 
-/* Animations */
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 1.5s forwards;
-}
-
-.fade-in.delay {
-  animation-delay: 0.8s;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-nav ul li a.active {
-  color: #fff;
-  border-bottom: 2px solid #fff;
-}
-/* Mobile Styles */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav ul {
-    flex-direction: column;
-    width: 100%;
-    gap: 0.5rem;
-    margin-top: 1rem;
-  }
-
-  nav ul li a {
-    display: block;
-    width: 100%;
-    padding: 0.5rem 1rem;
-    border-left: 2px solid #333;
-  }
-
-  .intro h2 {
-    font-size: 2.2rem;
-  }
-
-  .intro p {
-    font-size: 1rem;
-  }
-
-  section {
-    padding: 2rem 1rem;
-  }
-
-  .project-card {
-    padding: 1rem;
-    font-size: 0.95rem;
-  }
-
-  footer {
-    padding: 1.5rem 1rem;
-    font-size: 0.9rem;
-  }
-}
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: #fff;
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  #nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  #nav-links.show {
-    display: flex;
-  }
-}
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: #fff;
-}
-
-/* Mobile View */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  #nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 0.5rem;
-    gap: 0;
-  }
-
-  #nav-links.show {
-    display: flex;
-  }
-
-  #nav-links li a {
-    padding: 0.7rem 1rem;
-    border-left: 2px solid #333;
-    width: 100%;
-    display: block;
-  }
-}
-.project-card a {
-  color: #f04;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.project-card a:hover {
-  color: #fff;
-}
-.project-card a {
-  color: #f04;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.project-card a:hover {
+input {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 1rem;
+  background: #333;
   color: white;
 }
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
+
+button {
+  background: #f04;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
+button:hover {
+  background: #d03;
 }
 
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+#weatherResult {
+  margin-top: 1.2rem;
+  font-size: 1.1rem;
+  color: #ccc;
 }
