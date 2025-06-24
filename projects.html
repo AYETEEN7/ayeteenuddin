@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AYETEEN | Projects</title>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0e0e0e;
+      color: white;
+      padding: 2rem;
+      margin: 0;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .project-card {
+      background: #1a1a1a;
+      padding: 1.2rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 8px #000;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .project-card a {
+      color: #f04;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    .project-card a:hover {
+      color: white;
+    }
+
+    .project-card p {
+      margin-top: 0.5rem;
+      color: #aaa;
+    }
+
+    /* Scroll Reveal Animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.7s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <h2>My Projects</h2>
+
+  <div class="project-card reveal">
+    <h3><a href="catch-the-box/index.html" target="_blank">Catch the Box Game</a></h3>
+    <p>Dark eCommerce UI with animated sections.</p>
+  </div>
+
+  <div class="project-card reveal">
+    <h3><a href="portfolio-v2/index.html" target="_blank">Portfolio V2</a></h3>
+    <p>Modern scroll portfolio with dark theme.</p>
+  </div>
+
+  <div class="project-card reveal">
+   <h3><a href="form-validator/index.html" target="_blank">Form Validator</a></h3>
+    <p>Checks name, email, and password live.</p>
+  </div>
+
+  <div class="project-card reveal">
+    <h3><a href="typing-test/index.html" target="_blank">Typing Speed Test</a></h3>
+    <p>Measures WPM live with JS and clean UI.</p>
+  </div>
+
+  <div class="project-card reveal">
+    <h3><a href="weather-app/index.html" target="_blank">Weather App</a></h3>
+    <p>Live weather using OpenWeatherMap API.</p>
+  </div>
+
+  <div class="project-card reveal">
+    <h3><a href="quiz-game/index.html" target="_blank">Quiz Game</a></h3> 
+    <p>Multiple choice JS quiz with scoring.</p>
+  </div>
+
+  <div class="project-card reveal">
+   <h3><a href="netflix-clone/index.html" target="_blank">Netflix UI Clone</a></h3>
+    <p>Landing page using CSS Grid + Flexbox.</p>
+  </div>
+
+  <script>
+    const reveals = document.querySelectorAll(".reveal");
+
+    function revealOnScroll() {
+      reveals.forEach((el) => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        const revealPoint = 100;
+
+        if (elementTop < windowHeight - revealPoint) {
+          el.classList.add("active");
+        } else {
+          el.classList.remove("active");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll); // triggers on page load
+  </script>
+
+</body>
+</html>
